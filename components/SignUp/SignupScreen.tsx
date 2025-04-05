@@ -3,14 +3,15 @@ import { SafeAreaView } from "react-native-safe-area-context"
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Feather from '@expo/vector-icons/Feather';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+// import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "types/navigation";
-import { useNavigation } from "@react-navigation/native";
+import { Link } from "expo-router";
+// import { useNavigation } from "@react-navigation/native";
 
-const Signup = () => {
+const SignupScreen = () => {
 
-    type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;
-    const navigation = useNavigation<NavigationProp>();
+    // type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'index'>;
+    // const navigation = useNavigation<NavigationProp>();
 
     return (
         <SafeAreaView>
@@ -42,19 +43,21 @@ const Signup = () => {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity
-                    className={`flex-row items-center justify-center border bg-white border-gray-200 rounded-lg py-3 px-4 my-2 w-full`}
-                    onPress={() => navigation.navigate('SignupWithEmail')}
-                    activeOpacity={0.8}
-                >
-                    <Text className={`text-black text-base font-medium`}>Continue with Email</Text>
-                    <View className="absolute left-4">
-                        <MaterialIcons name="alternate-email" size={24} color="black" />
-                    </View>
-                </TouchableOpacity>
+                <Link href={'/email'}>
+                    <TouchableOpacity
+                        className={`flex-row items-center justify-center border bg-white border-gray-200 rounded-lg py-3 px-4 my-2 w-full`}
+                        // onPress={() => navigation.navigate('signupWithEmail')}
+                        activeOpacity={0.8}
+                    >
+                        <Text className={`text-black text-base font-medium`}>Continue with Email</Text>
+                        <View className="absolute left-4">
+                            <MaterialIcons name="alternate-email" size={24} color="black" />
+                        </View>
+                    </TouchableOpacity>
+                </Link>
             </View>
         </SafeAreaView>
     )
 }
 
-export default Signup
+export default SignupScreen
