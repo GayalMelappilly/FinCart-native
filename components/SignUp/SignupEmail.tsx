@@ -44,11 +44,11 @@ const SignupEmail = () => {
     };
 
     return (
-        <SafeAreaView className="flex-1 bg-gray-50 pt-10 px-8">
+        <SafeAreaView className="flex-1 bg-gray-50 pt-10 w-full px-12">
             <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>
                 {/* Main Content */}
                 <View className="p-5">
-                    <Text>Welcome to </Text>
+                    <Text>Welcome to FinCart</Text>
                     <Text className="text-2xl font-bold text-gray-900 mb-6">Create your account</Text>
 
                     <InputField

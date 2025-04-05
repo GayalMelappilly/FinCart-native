@@ -5,7 +5,7 @@ import Feather from '@expo/vector-icons/Feather';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 // import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "types/navigation";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 // import { useNavigation } from "@react-navigation/native";
 
 const SignupScreen = () => {
@@ -24,6 +24,7 @@ const SignupScreen = () => {
                 <Text className="my-4 text-xl text-center">Choose a signup option</Text>
                 <TouchableOpacity
                     className={`flex-row items-center justify-center border bg-white border-gray-200 rounded-lg py-3 px-4 my-2 w-full`}
+                    onPress={()=> router.push('/gmail')}
                     activeOpacity={0.8}
                 >
                     <Text className={`text-black text-base font-medium`}>Continue with Google</Text>
@@ -42,19 +43,16 @@ const SignupScreen = () => {
                         <Feather name="phone" size={24} color="black" />
                     </View>
                 </TouchableOpacity>
-
-                <Link href={'/email'}>
-                    <TouchableOpacity
-                        className={`flex-row items-center justify-center border bg-white border-gray-200 rounded-lg py-3 px-4 my-2 w-full`}
-                        // onPress={() => navigation.navigate('signupWithEmail')}
-                        activeOpacity={0.8}
-                    >
-                        <Text className={`text-black text-base font-medium`}>Continue with Email</Text>
-                        <View className="absolute left-4">
-                            <MaterialIcons name="alternate-email" size={24} color="black" />
-                        </View>
-                    </TouchableOpacity>
-                </Link>
+                <TouchableOpacity
+                    className={`flex-row items-center justify-center border bg-white border-gray-200 rounded-lg py-3 px-4 my-2 w-full`}
+                    onPress={() => router.push('/email')}
+                    activeOpacity={0.8}
+                >
+                    <Text className={`text-black text-base font-medium`}>Continue with Email</Text>
+                    <View className="absolute left-4">
+                        <MaterialIcons name="alternate-email" size={24} color="black" />
+                    </View>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     )

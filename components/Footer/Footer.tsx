@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons'
 // import { useNavigation } from "@react-navigation/native"
 // import { NativeStackNavigationProp } from "@react-navigation/native-stack"
 import { RootStackParamList } from "types/navigation"
-import { Link } from "expo-router"
+import { Link, router } from "expo-router"
 
 
 const Footer = () => {
@@ -25,12 +25,10 @@ const Footer = () => {
                 <Ionicons name="grid" size={24} color="#666" />
                 <Text className="text-xs mt-1 text-gray-500">Categories</Text>
             </TouchableOpacity>
-            <Link href={'/signup'}>
-                <TouchableOpacity className="flex-1 items-center py-2" >
-                    <Ionicons name="person" size={24} color="#666" />
-                    <Text style={{ fontSize: 12, marginTop: 4, color: '#888' }}>Profile</Text>
-                </TouchableOpacity>
-            </Link>
+            <TouchableOpacity className="flex-1 items-center py-2" onPress={()=>router.push('/signup')}>
+                <Ionicons name="person" size={24} color="#666" />
+                <Text className="text-xs mt-1 text-gray-500">Profile</Text>
+            </TouchableOpacity>
         </View >
     )
 }
