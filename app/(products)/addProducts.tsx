@@ -1,10 +1,10 @@
-import DashboardScreen from 'components/Home/DashboardScreen';
+import AddProductScreen from 'components/Products/AddProducts';
 import { View } from 'react-native';
 
-const Home = () => {
+const AddProducts = () => {
   return (
     <View className={styles.container}>
-      <DashboardScreen />
+      <AddProductScreen />
     </View>
   );
 };
@@ -13,5 +13,4 @@ const styles = {
   container: `items-center flex-1 justify-center`,
 };
 
-export default Home
-
+export default AddProducts

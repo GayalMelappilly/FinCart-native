@@ -45,7 +45,7 @@ const SignupEmail = () => {
 
     return (
         <SafeAreaView className="flex-1 bg-gray-50 pt-10 w-full px-12">
-            <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>
+            <ScrollView contentContainerStyle={{ paddingBottom: 20 }} showsVerticalScrollIndicator={false}>
                 {/* Main Content */}
                 <View className="p-5">
                     <Text>Welcome to FinCart</Text>
