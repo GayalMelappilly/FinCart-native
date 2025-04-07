@@ -2,9 +2,11 @@ import { Text, TouchableOpacity, View } from "react-native"
 import { useState } from "react";
 import { MaterialIcons, MaterialCommunityIcons, Ionicons, Feather } from '@expo/vector-icons';
 import { router } from "expo-router"
+import { useFooterElement } from "context/FooterContext";
 
 const Footer = () => {
-    const [active, setActive] = useState('dashboard');
+    
+    const {activeElement, setActiveElement} = useFooterElement()
 
     const footerItems = [
         {
@@ -16,7 +18,7 @@ const Footer = () => {
         {
             id: "orders",
             label: "Orders",
-            icon: (color:string) => <Feather name="shopping-bag" size={24} color="#6B7280" />,
+            icon: (color:string) => <Feather name="shopping-bag" size={24} color={color} />,
             router: '/orders'
         },
         {
@@ -36,14 +38,14 @@ const Footer = () => {
     return (
         <View className="flex-row bg-white border-t border-gray-200 py-2">
             {footerItems.map((item) => {
-                const isActive = item.id === active;
+                const isActive = item.id === activeElement;
                 const color = isActive ? "#000" : "#666"; 
                 return (
                     <TouchableOpacity
                         key={item.id}
                         className="flex-1 items-center py-2"
                         onPress={() => {
-                            setActive(item.id);
+                            setActiveElement(item.id);
                             router.push(item.router);
                         }}
                     >
