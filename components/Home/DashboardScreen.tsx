@@ -29,7 +29,7 @@ const DashboardScreen = () => {
     <SafeAreaView className="flex-1 bg-gray-50">
       <StatusBar barStyle="light-content" />
 
-      <ScrollView className="flex-1">
+      <ScrollView className="flex-1 m-2 py-4">
         <View className="px-4 py-4 flex-row justify-between items-center">
           <Text className="text-2xl font-bold text-gray-800">Dashboard</Text>
           <View className="flex-row bg-gray-100 rounded-lg overflow-hidden">

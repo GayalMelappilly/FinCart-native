@@ -1,68 +1,102 @@
 import React from 'react';
-import { View, Text, Pressable, StatusBar } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import { View, Text, Pressable, StatusBar, SafeAreaView } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
+import Footer from 'components/Footer/Footer';
 
 interface MenuCardProps {
-  title: string;
-  icon: keyof typeof MaterialIcons.glyphMap;
-  color: string;
-  onPress: () => void;
+    title: string;
+    description: string;
+    icon: keyof typeof Ionicons.glyphMap;
+    onPress: () => void;
 }
 
-const MenuCard: React.FC<MenuCardProps> = ({ title, icon, color, onPress }) => (
-  <Pressable 
-    onPress={onPress}
-    className="w-full p-6 rounded-xl mb-4 shadow"
-    style={{ backgroundColor: color }}
-  >
-    <View className="items-center justify-center">
-      <MaterialIcons name={icon} size={36} color="white" />
-      <Text className="text-white font-semibold text-lg mt-2">{title}</Text>
-    </View>
-  </Pressable>
+const MenuCard: React.FC<MenuCardProps> = ({
+    title,
+    description,
+    icon,
+    onPress
+}) => (
+    <Pressable
+        onPress={onPress}
+        className="w-full bg-white rounded-xl p-6 shadow-sm mb-4"
+        style={{ elevation: 2 }}
+    >
+        <View className="flex-row items-center">
+            <View className="bg-gray-50 p-3 rounded-lg">
+                <Ionicons name={icon} size={24} color="#374151" />
+            </View>
+            <View className="ml-4 flex-1">
+                <Text className="text-gray-800 font-semibold text-base">{title}</Text>
+                <Text className="text-gray-500 text-sm mt-1">{description}</Text>
+            </View>
+            <Ionicons name="chevron-forward" size={20} color="#9ca3af" />
+        </View>
+    </Pressable>
 );
 
 const ProductsScreen = () => {
-  return (
-    <View className="flex-1 p-4">
-      <StatusBar barStyle="light-content" />
-      
-      <View className="flex-row flex-wrap justify-between mt-4">
-        <View className="w-[48%]">
-          <MenuCard 
-            title="My Products" 
-            icon="inventory" 
-            color="#4f46e5" 
-            onPress={() => router.push('MyProducts')} 
-          />
-          
-          <MenuCard 
-            title="Edit Product" 
-            icon="edit" 
-            color="#0891b2" 
-            onPress={() => router.push('EditProduct')} 
-          />
-        </View>
-        
-        <View className="w-[48%]">
-          <MenuCard 
-            title="Add Product" 
-            icon="add-circle-outline" 
-            color="#059669" 
-            onPress={() => router.push('/addProducts')} 
-          />
-          
-          <MenuCard 
-            title="Delete Product" 
-            icon="delete-outline" 
-            color="#dc2626" 
-            onPress={() => router.push('DeleteProduct')} 
-          />
-        </View>
-      </View>
-    </View>
-  );
+    return (
+        <SafeAreaView className="flex-1 bg-gray-50 w-full">
+            <StatusBar barStyle="dark-content" />
+
+            <View className="flex-1 px-5 py-8">
+                <View className="mb-6">
+                    <Text className="text-gray-900 text-2xl font-bold">Your Inventory</Text>
+                </View>
+
+                <View className="flex-1">
+                    <MenuCard
+                        title="My Products"
+                        description="View and manage your product catalog"
+                        icon="layers-outline"
+                        onPress={() => router.push('MyProducts')}
+                    />
+
+                    <MenuCard
+                        title="Add Product"
+                        description="Create a new product in your inventory"
+                        icon="add-circle-outline"
+                        onPress={() => router.push('/addProducts')}
+                    />
+
+                    <MenuCard
+                        title="Edit Product"
+                        description="Make changes to existing products"
+                        icon="create-outline"
+                        onPress={() => router.push('EditProduct')}
+                    />
+
+                    <MenuCard
+                        title="Delete Product"
+                        description="Remove products from your inventory"
+                        icon="trash-outline"
+                        onPress={() => router.push('DeleteProduct')}
+                    />
+                </View>
+
+                <View className="bg-white rounded-xl p-5 shadow-sm" style={{ elevation: 2 }}>
+                    <View className="flex-row justify-between">
+                        <View className="items-center">
+                            <Text className="text-2xl font-bold text-gray-900">42</Text>
+                            <Text className="text-gray-500 text-xs">Total Products</Text>
+                        </View>
+                        <View className="h-full w-px bg-gray-200" />
+                        <View className="items-center">
+                            <Text className="text-2xl font-bold text-gray-900">7</Text>
+                            <Text className="text-gray-500 text-xs">Categories</Text>
+                        </View>
+                        <View className="h-full w-px bg-gray-200" />
+                        <View className="items-center">
+                            <Text className="text-2xl font-bold text-gray-900">5</Text>
+                            <Text className="text-gray-500 text-xs">Low Stock</Text>
+                        </View>
+                    </View>
+                </View>
+            </View>
+            <Footer />
+        </SafeAreaView>
+    );
 };
 
 export default ProductsScreen;

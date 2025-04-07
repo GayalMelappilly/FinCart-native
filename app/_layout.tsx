@@ -1,7 +1,23 @@
-import { Stack } from "expo-router";
+import { SplashScreen, Stack } from "expo-router";
 import '../global.css'
+import { useEffect } from "react";
 
 export default function RootLayout() {
+  useEffect(() => {
+    const prepare = async () => {
+      try {
+        // Simulate loading assets or data
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      } catch (e) {
+        console.warn(e);
+      } finally {
+        // 👇 Hide splash screen once ready
+        SplashScreen.hideAsync();
+      }
+    };
+
+    prepare();
+  }, []);
   return (
     <Stack>
       <Stack.Screen name="index" options={{headerShown: false}}/>
