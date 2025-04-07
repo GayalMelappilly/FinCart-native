@@ -38,7 +38,7 @@ const MenuCard: React.FC<MenuCardProps> = ({
 const ProductsScreen = () => {
     return (
         <SafeAreaView className="flex-1 bg-gray-50 w-full">
-            <StatusBar barStyle="dark-content" />
+            <StatusBar barStyle="light-content" />
 
             <View className="flex-1 px-5 py-8">
                 <View className="mb-6">

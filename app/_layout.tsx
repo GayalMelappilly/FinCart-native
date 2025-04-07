@@ -2,21 +2,15 @@ import { SplashScreen, Stack } from "expo-router";
 import '../global.css'
 import { useEffect } from "react";
 
+SplashScreen.preventAutoHideAsync();
+
 export default function RootLayout() {
   useEffect(() => {
-    const prepare = async () => {
-      try {
-        // Simulate loading assets or data
-        await new Promise(resolve => setTimeout(resolve, 2000));
-      } catch (e) {
-        console.warn(e);
-      } finally {
-        // 👇 Hide splash screen once ready
-        SplashScreen.hideAsync();
-      }
+    const hideSplash = async () => {
+      await SplashScreen.hideAsync();
     };
-
-    prepare();
+    
+    hideSplash();
   }, []);
   return (
     <Stack>
@@ -27,6 +21,7 @@ export default function RootLayout() {
       <Stack.Screen name="(products)/addProducts" options={{title: 'Add Product'}} />
       <Stack.Screen name="products" options={{title: 'Products'}} />
       <Stack.Screen name="orders" options={{title: 'Orders'}} />
+      <Stack.Screen name="profile" options={{title: 'Profile'}} />
     </Stack>
   );
 }

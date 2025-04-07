@@ -29,7 +29,7 @@ const Footer = () => {
             id: "profile",
             label: "Profile",
             icon: (color:string) => <Ionicons name="person" size={24} color={color} />,
-            router: '/signup'
+            router: '/profile'
         }
     ];
 
