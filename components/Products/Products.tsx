@@ -38,8 +38,6 @@ const MenuCard: React.FC<MenuCardProps> = ({
 const ProductsScreen = () => {
     return (
         <SafeAreaView className="flex-1 bg-gray-50 w-full">
-            <StatusBar barStyle="light-content" />
-
             <View className="flex-1 px-5 py-8">
                 <View className="mb-6">
                     <Text className="text-gray-900 text-2xl font-bold">Your Inventory</Text>
@@ -50,7 +48,7 @@ const ProductsScreen = () => {
                         title="My Products"
                         description="View and manage your product catalog"
                         icon="layers-outline"
-                        onPress={() => router.push('MyProducts')}
+                        onPress={() => router.push('/products')}
                     />
 
                     <MenuCard
@@ -64,14 +62,14 @@ const ProductsScreen = () => {
                         title="Edit Product"
                         description="Make changes to existing products"
                         icon="create-outline"
-                        onPress={() => router.push('EditProduct')}
+                        onPress={() => router.push('/products')}
                     />
 
                     <MenuCard
                         title="Delete Product"
                         description="Remove products from your inventory"
                         icon="trash-outline"
-                        onPress={() => router.push('DeleteProduct')}
+                        onPress={() => router.push('/products')}
                     />
                 </View>
 
@@ -94,7 +92,6 @@ const ProductsScreen = () => {
                     </View>
                 </View>
             </View>
-            <Footer />
         </SafeAreaView>
     );
 };

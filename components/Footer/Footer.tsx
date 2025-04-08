@@ -39,7 +39,7 @@ const Footer = () => {
         <View className="flex-row bg-white border-t border-gray-200 py-2">
             {footerItems.map((item) => {
                 const isActive = item.id === activeElement;
-                const color = isActive ? "#000" : "#666"; 
+                const color = isActive ? "#4338ca" : "#666"; 
                 return (
                     <TouchableOpacity
                         key={item.id}
@@ -50,7 +50,7 @@ const Footer = () => {
                         }}
                     >
                         {item.icon(color)}
-                        <Text className={`text-xs mt-1 ${isActive ? "text-gray-800" : "text-gray-500"}`}>
+                        <Text className={`text-xs mt-1 ${isActive ? "text-indigo-700" : "text-gray-500"}`}>
                             {item.label}
                         </Text>
                     </TouchableOpacity>

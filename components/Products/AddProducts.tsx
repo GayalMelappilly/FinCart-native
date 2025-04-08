@@ -24,9 +24,7 @@ const AddProductScreen = () => {
   });
 
   return (
-    <SafeAreaView className='flex-1 bg-gray-50 w-full h-full'>
-      <StatusBar barStyle="light-content" />
-      
+    <SafeAreaView className='flex-1 bg-gray-50 w-full h-full'>      
       <ScrollView className='flex-1'>
         {/* Add New Product Section */}
         <View className='m-4 bg-white rounded-lg shadow-sm p-5'>
@@ -154,7 +152,6 @@ const AddProductScreen = () => {
           </View>
         </View>
       </ScrollView>
-      <Footer />
     </SafeAreaView>
   );
 }

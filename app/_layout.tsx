@@ -2,6 +2,8 @@ import { SplashScreen, Stack } from "expo-router";
 import '../global.css'
 import { useEffect } from "react";
 import { FooterElementProvider } from "context/FooterContext";
+import Footer from "components/Footer/Footer";
+import { StatusBar } from "react-native";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -15,6 +17,7 @@ export default function RootLayout() {
   }, []);
   return (
     <FooterElementProvider>
+      <StatusBar barStyle="light-content" />
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="signup" options={{ title: 'Signup' }} />
@@ -25,6 +28,7 @@ export default function RootLayout() {
         <Stack.Screen name="orders" options={{ title: 'Orders' }} />
         <Stack.Screen name="profile" options={{ title: 'Profile' }} />
       </Stack>
+      <Footer />
     </FooterElementProvider>
   );
 }

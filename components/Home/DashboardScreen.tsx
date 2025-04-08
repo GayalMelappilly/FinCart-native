@@ -6,8 +6,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Dimensions,
-  ActivityIndicator,
-  StatusBar
+  ActivityIndicator
 } from 'react-native';
 import {
   Feather,
@@ -27,8 +26,6 @@ const DashboardScreen = () => {
 
   return (
     <SafeAreaView className="flex-1 bg-gray-50">
-      <StatusBar barStyle="light-content" />
-
       <ScrollView className="flex-1 m-2 py-4">
         <View className="px-4 py-4 flex-row justify-between items-center">
           <Text className="text-2xl font-bold text-gray-800">Dashboard</Text>
@@ -281,7 +278,6 @@ const DashboardScreen = () => {
           </View>
         </View>
       </ScrollView>
-      <Footer />
     </SafeAreaView>
   );
 }

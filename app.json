@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Fincart",
-    "slug": "Fincart",
+    "slug": "my-expo-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,7 +16,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gayalmelappilly.myexpoapp"
     },
     "android": {
       "adaptiveIcon": {
@@ -41,6 +42,7 @@
       "eas": {
         "projectId": "910e93ac-d6a3-4c58-92f0-d3839204fe68"
       }
-    }
+    },
+    "owner": "gayalmelappilly"
   }
 }

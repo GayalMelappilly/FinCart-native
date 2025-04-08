@@ -23,7 +23,7 @@ interface SellerProfile {
 export const sellerProfile: SellerProfile = {
     id: "seller123",
     name: "Tyrion Lannister",
-    businessName: "Lannister's",
+    businessName: "Lannister's Farm",
     email: "tyrion@got.com",
     phone: "+91 1023456789",
     address: "Casterly Rock, King's Landing",

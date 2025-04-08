@@ -46,9 +46,7 @@ const OrdersScreen = () => {
   );
 
   return (
-    <SafeAreaView className="flex-1 bg-white w-full pt-5 px-5">
-      <StatusBar barStyle="light-content" />
-      
+    <SafeAreaView className="flex-1 bg-white w-full pt-5 px-5">      
       {/* Title */}
       <View className="px-4 py-3">
         <Text className="text-2xl font-bold text-gray-800">Orders</Text>
@@ -77,7 +75,6 @@ const OrdersScreen = () => {
         keyExtractor={item => item.id}
         showsVerticalScrollIndicator={false}
       />
-      <Footer />
     </SafeAreaView>
   );
 }

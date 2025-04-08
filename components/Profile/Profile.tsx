@@ -14,7 +14,7 @@ const ProfileSection: React.FC<{ title: string; children: React.ReactNode }> = (
 const ProfileItem: React.FC<{ icon: React.ReactNode; label: string; value: string }> = ({
     icon, label, value
 }) => (
-    <View className="flex-row items-center mb-3 last:mb-0">
+    <View className="flex-row items-center my-4 last:mb-0">
         <View className="w-8">{icon}</View>
         <View className="flex-1 ml-2">
             <Text className="text-gray-500 text-xs">{label}</Text>
@@ -53,8 +53,6 @@ export default function SellerProfileScreen() {
     return (
         <SafeAreaView className="flex-1 bg-gray-50 w-full">
             <ScrollView className="pb-8">
-                <StatusBar barStyle="light-content" />
-
                 {/* Header with Cover Image */}
                 <View className="relative h-48">
                     <Image
@@ -78,7 +76,6 @@ export default function SellerProfileScreen() {
                 </View>
 
                 {/* Profile Info */}
-                <View className='px-2'>
                     <View className="items-center mb-6">
                         <Text className="text-2xl font-bold text-gray-800">{sellerProfile.name}</Text>
                         <Text className="text-lg text-gray-600">{sellerProfile.businessName}</Text>
@@ -94,6 +91,7 @@ export default function SellerProfileScreen() {
                         </View>
                     </View>
 
+                <View className='px-3'> 
                     {/* Stats */}
                     <View className="flex-row justify-center mb-6">
                         <StatCard
@@ -140,8 +138,8 @@ export default function SellerProfileScreen() {
                     {/* Action Buttons */}
                     <View className="flex-row mt-2 mb-8">
                         <TouchableOpacity className="flex-1 bg-indigo-600 py-3 rounded-lg mx-1 flex-row justify-center items-center">
-                            <Feather name="settings" size={18} color="white" />
-                            <Text className="ml-2 text-white font-medium">Store Settings</Text>
+                            <Feather name="edit" size={18} color="white" />
+                            <Text className="ml-2 text-white font-medium">Edit Details</Text>
                         </TouchableOpacity>
                         <TouchableOpacity className="flex-1 bg-white border border-gray-300 py-3 rounded-lg mx-1 flex-row justify-center items-center">
                             <Feather name="eye" size={18} color="#4F46E5" />
@@ -150,7 +148,6 @@ export default function SellerProfileScreen() {
                     </View>
                 </View>
             </ScrollView>
-            <Footer />
         </SafeAreaView>
     );
 }
